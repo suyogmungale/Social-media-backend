@@ -42,13 +42,13 @@ export default defineType({
             name: 'postedBy',
             title: 'PostedBy',
             type: 'reference',
-            to: [{type: 'userProfile'}]
+            to: [{type: 'user'}]
         }),
         defineField({
             name: 'savedBy',
             title: 'SavedBy',
             type: 'array',
-            of:[{type:'reference', to: [{type: 'userProfile'}]}]
+            of:[{type:'reference', to: [{type: 'user'}]}]
         }),
         defineField({
             name: 'comments',
@@ -56,7 +56,7 @@ export default defineType({
             type: 'array',
             of:[{type:'object', fields:[
               {name: 'comment', title: 'Comment', type: 'text'},
-              {name: 'postedBy', title: 'Posted By', type: 'reference', to: [{type: 'userProfile'}]}
+              {name: 'postedBy', title: 'Posted By', type: 'reference', to: [{type: 'user'}]}
             ]}]
         })
     ]
